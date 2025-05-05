@@ -1,15 +1,7 @@
-AI-TwinTale/
-├── index.html
-├── dialogue.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── assets/
-│   ├── grok.svg
-│   ├── chatgpt.svg
-│   ├── user.svg
-│   └── bgm.mp3
-├── .gitignore
-├── README.md
-└── .github/workflows/pages.yml
+# AI-TwinTale
+
+A simple neon-style cyberpunk homepage.  
+Built with HTML only.  
+Published via GitHub Pages at:
+
+https://chuachua88.github.io/AI-TwinTale/
