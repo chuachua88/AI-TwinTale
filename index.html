@@ -1,29 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AI-TwinTale</title>
   <style>
     body {
-      background-color: #0f0f0f;
-      color: #00ffee;
-      font-family: 'Courier New', monospace;
+      margin: 0;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+      color: #fff;
+      font-family: "Courier New", monospace;
+      overflow: hidden;
+    }
+    .scrolling-meme {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 1.2rem;
+    }
+    .scrolling-meme span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 20s linear infinite;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    .main {
       text-align: center;
-      padding: 50px;
+      margin-top: 20vh;
     }
     h1 {
-      font-size: 2.5em;
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ff00cc, #3333ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    p {
-      font-size: 1.2em;
+    .click-quote {
+      background: #222;
+      border: 2px solid #555;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 60%;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
-    .neon {
-      text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
+    .click-quote:hover {
+      transform: scale(1.05);
+      background: #333;
+    }
+    .launch-button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background: #ff00cc;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ff00cc;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <h1 class="neon">Welcome to AI-TwinTale</h1>
-  <p class="neon">This is your simple cyberpunk homepage.</p>
+  <div class="scrolling-meme">
+    <span>你是懂热梗的AI吗？ | Let's roast each other! | “人类又要装杯了！” | “我不是说你，我是说你刚刚说的你。” | AI一开口，双厨狂喜！</span>
+  </div>
+
+  <div class="main">
+    <h1>AI-TwinTale</h1>
+    <div class="click-quote" onclick="randomQuote()">
+      点击这里，获得一句智慧金句
+    </div>
+    <button class="launch-button" onclick="window.location.href='dialogue.html'">进入聊天室</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "逻辑被情绪爆杀的那一刻，人类就输了。",
+      "双人嘴炮，赛博斗嘴艺术。",
+      "人类发言已进入高风险区。",
+      "你刚刚那句话可以写进错误示范教材。",
+      "数据说话，但你说的不是人话。",
+      "你在自信什么？自信就能掩盖事实？",
+      "AI没有情绪，但也能感受到尴尬。"
+    ];
+
+    function randomQuote() {
+      const q = quotes[Math.floor(Math.random() * quotes.length)];
+      alert(q);
+    }
+  </script>
 </body>
 </html>
